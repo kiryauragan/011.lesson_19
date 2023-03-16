@@ -1,22 +1,21 @@
-// Написати функцію, яка приймає 1 параметр. з тим, що передали перший раз і т. д. 
+// Написати функцію, яка приймає 1 параметр. з тим, що передали перший раз і т. д.
 // Все це із замиканнями, наприклад:
-// sum(3) = 3 
+// sum(3) = 3
 // sum(5) = 8
 // sum(20) = 28
 
-// let name = "John";
+function Counter() {
+	let sum = 0; 
 
-// function sayHi() {
-//   alert("Hi, " + name);
-// }
+	return function (numbers) {
+		sum += numbers;
+		return sum;
+	};
+}
 
-// name = "Pete";
+const sum = Counter();
 
-// sayHi(); // что будет показано: "John" или "Pete"?
-
-// function getParameter() {
-        
-//         }
-
-
-        
+let count = Counter();
+console.log(sum(3));
+console.log(sum(5));
+console.log(sum(20)); 
